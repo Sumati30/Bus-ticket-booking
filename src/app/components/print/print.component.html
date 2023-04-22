@@ -7,18 +7,18 @@
                 <div class="card-body text-center">
                     <div clss="col-md-12">
                         <div class="row justify-content-center">
-                            <div class="col-md-3">{{user.user_name}} - {{user.phone_number}}</div>
-                            <div class="col-md-3">{{journey.fromCity}} - {{journey.toCity}}</div>                          
-                            <div class="col-md-3">{{journey.dep_date}} {{journey.dep_time}}</div>
+                            <div class="col-md-3">{{ticketInfo.user.user_name}} - {{ticketInfo.user.phone_number}}</div>
+                            <div class="col-md-3">{{ticketInfo.journey.fromCity}} - {{ticketInfo.journey.toCity}}</div>                          
+                            <div class="col-md-3">{{ticketInfo.journey.dep_date}} {{ticketInfo.journey.dep_time}}</div>
                         </div>
                     </div>
                 </div>
                 <div class="card-body text-center">
                     <div clss="col-md-12">
                         <div class="row justify-content-center">
-                            <div class="col-md-3">Seats - {{journey.seat_name}}</div>
-                            <div class="col-md-3">{{journey.bus_name}} Travels.</div>
-                            <div class="col-md-3">{{journey.total_fare}} Rs/-</div>
+                            <div class="col-md-3">Seats - {{ticketInfo.journey.seat_name}}</div>
+                            <div class="col-md-3">{{ticketInfo.journey.bus_name}} Travels.</div>
+                            <div class="col-md-3">{{ticketInfo.journey.total_fare}} Rs/-</div>
                         </div>
                     </div>
                 </div>

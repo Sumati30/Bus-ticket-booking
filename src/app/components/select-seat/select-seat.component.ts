@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-import { Bus } from '../../models/bus.model'
+import { Bus } from '../../models/bus.model';
+import { JourneyRoute } from '../../models/route.model'
 
 @Component({
   selector: 'select-seat',
@@ -16,9 +17,15 @@ export class SelectSeatComponent implements OnInit {
   msg: boolean = false;
   seats: any = [];
   total: number = 0;
-  constructor(private route:Router) { }
+  route : JourneyRoute;
+
+  constructor(private router:Router) { }
 
   ngOnInit() {
+    this.route=JSON.parse(localStorage.getItem("route"));
+      if(!this.route) {
+        this.router.navigate([''])
+      }
   }
 
   firstRowSeats = [
@@ -106,7 +113,7 @@ export class SelectSeatComponent implements OnInit {
       seat_name  : this.seats
    }
    console.log('Journey details' , journey);
-   this.route.navigate(['user-info']);
+   this.router.navigate(['user-info']);
    this.closeModal.emit();
 
    localStorage.setItem('journey-details', JSON.stringify(journey));
