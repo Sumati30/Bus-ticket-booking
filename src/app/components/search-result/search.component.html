@@ -1,0 +1,50 @@
+<div class="container p-5">
+    <div class="row">
+        <h6 class="route-heading">{{userRoute.from_city}} To {{userRoute.to_city}} On {{ userRoute.departure | date : 'longDate'}}</h6>
+    </div>
+    <div class="row fltr">
+         <div class="filter-type">
+            <label><b>Filter By</b></label>
+         <select>
+            <option>By Bus</option>
+         </select>
+         <select>
+            <option>By Type</option>
+         </select>
+         </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+             <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Bus Name</th>
+                        <th>Dept.Time</th>
+                        <th>Coach Type</th>
+                        <th>Seats Available</th>
+                        <th>Fare</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let b of buses">
+                        <td> <h6>{{b.name}}</h6></td>
+                        <td>{{b.time}}</td>
+                        <td>{{b.coach_type}}</td>
+                        <td>{{b.seat}}</td>
+                        <td>{{b.fare}}</td>
+                        <ng-template #template>
+                            <div class="modal-body">
+                                <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                              <select-seat [bus]="b" (closeModal)="closeModal()"></select-seat>
+                            </div>
+                        </ng-template>
+                        <td><button  (click)="openModal(template)" class="btn btn-danger btn-sm">View Seats</button></td>        
+                    </tr>
+                </tbody>
+             </table>
+        </div>
+    </div>
+</div>

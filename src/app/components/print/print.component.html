@@ -1,0 +1,31 @@
+
+<div class="container p-5">
+    <div class="col-md-12">
+        <div class="row justify-content-center">
+            <div class="card shadow rounded">
+                <div class="card-header text-center"><h5>Ticket - Online Reservation</h5></div>
+                <div class="card-body text-center">
+                    <div clss="col-md-12">
+                        <div class="row justify-content-center">
+                            <div class="col-md-3">{{user.user_name}} - {{user.phone_number}}</div>
+                            <div class="col-md-3">{{journey.fromCity}} - {{journey.toCity}}</div>                          
+                            <div class="col-md-3">{{journey.dep_date}} {{journey.dep_time}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body text-center">
+                    <div clss="col-md-12">
+                        <div class="row justify-content-center">
+                            <div class="col-md-3">Seats - {{journey.seat_name}}</div>
+                            <div class="col-md-3">{{journey.bus_name}} Travels.</div>
+                            <div class="col-md-3">{{journey.total_fare}} Rs/-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <h6 style="color:red ; margin-top: 10px;">**Please bring this ticket copy while boarding!**</h6>
+        </div>
+    </div>
+</div>

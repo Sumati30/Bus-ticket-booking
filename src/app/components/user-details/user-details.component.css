@@ -1,0 +1,19 @@
+
+.container{
+    background-color: rgb(252, 245, 236);
+}
+
+.user-form{
+    display: block;
+    height: 350px;
+    
+}
+
+.journey-details {
+    display: block;
+    margin-left: 10px;
+    border:1px solid black;
+    height: auto;
+    color: rgb(12, 12, 12);
+    
+}

@@ -1,0 +1,16 @@
+
+footer{
+    background-color: rgb(236, 131, 131);
+    height: auto;
+}
+.card{
+
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+li{
+    list-style-type: none;
+    align-items: left;
+}

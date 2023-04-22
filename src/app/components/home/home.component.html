@@ -1,0 +1,40 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <form (ngSubmit)="SearchBus(f)" #f=ngForm>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="from">Leaving From:</label>
+                            <select (change)="leave($event)" type="text" class="form-control" ngModel id="from" name="fromcity" required>
+                                <option value="">Select City</option>
+                                <option value="Bangalore">Banglore</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Chennai">Chennai</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="to">Going To:</label>
+                            <select type="text" [ngModel]="place[0].key" class="form-control" ngModel id="to" name="tocity" required >
+                                <option *ngFor="let p of place"  [value]="p.key">{{p.value}}</option>
+                            </select>
+                          </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Dep">Departing On:</label>
+                        <input type="date" class="form-control" ngModel id="Dep" name="depdate" required>
+                    </div>
+                    <button [disabled]="!f.valid">Search Buses</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <img src="../../../assets/img/offers.PNG">
+            </div>
+        </div>
+    </div>
+</div>
+

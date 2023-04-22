@@ -1,0 +1,25 @@
+img{
+    width: 130px;
+    background-color: rgb(255, 224, 224);
+ }
+
+ .container{
+    background-color:  rgb(236, 131, 131);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow-x: hidden;
+    width: 100%;
+    
+ }
+
+ /* .logo{
+    background-color: rgb(111, 107, 116);
+ } */
+ 
+ .home{
+    padding-top: 10px;
+ }
+
+ a{
+   color:black;
+ }

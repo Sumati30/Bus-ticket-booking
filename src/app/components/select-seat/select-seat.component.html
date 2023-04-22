@@ -1,0 +1,84 @@
+<div class="container-fluid pt-3 mb-3">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="seat_plan_wrap">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6>Select Seats</h6>
+                        <div class="seats">
+                            <div class="handle">
+                                <img src="../../../assets/img/handle.png" alt="" >
+                            </div>
+                            <div class="column1">
+                                <ul>
+                                    <li *ngFor="let s of firstRowSeats">
+                                        <a (click)="Seat(s)" id="{{s.value}}" title="{{s.value}}">
+                                            <img src="../../../assets/img/fseat.png" alt="">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="column2">
+                                <ul>
+                                    <li *ngFor="let s of secondRowSeats">
+                                        <a (click)="Seat(s)" id="{{s.value}}" title="{{s.value}}">
+                                            <img src="../../../assets/img/fseat.png" alt="">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="column4">
+                                <ul>
+                                    <li *ngFor="let s of fourthRowSeats">
+                                        <a (click)="Seat(s)" id="{{s.value}}" title="{{s.value}}">
+                                            <img src="../../../assets/img/fseat.png" alt="">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="column3">
+                                <ul>
+                                    <li *ngFor="let s of thirdRowSeats">
+                                        <a (click)="Seat(s)" id="{{s.value}}" title="{{s.value}}">
+                                            <img src="../../../assets/img/fseat.png" alt="">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                       <div class="seat_plan">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Seat</th>
+                                    <th>Fare</th>
+                                    <th>Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let x of selectedSeats">
+                                    <td>{{x.seat}}</td>
+                                    <td>{{x.fare}}</td>
+                                    <td>{{x.type}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="total">
+                            <h6>Total : <span>{{total}}</span></h6>
+                        </div>
+                       </div>
+                       <div class="">
+                        <button class="confirm" (click)="confirm()">Confirm Selection</button>
+                       </div>
+                    </div>
+                </div>
+                <div class="row" id="msg" *ngIf="msg">
+                    <h6>You can select and book only 4 seats at a time!</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
